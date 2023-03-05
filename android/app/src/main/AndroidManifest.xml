@@ -30,8 +30,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "com.example.fab_samples://” -->
-                <data android:scheme="fab_samples"
-                     android:host="example.com" />
+                <data android:scheme="fab_samples.example.com" />
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
