@@ -45,16 +45,16 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     final uriString = Beamer.of(context).configuration.location!;
-    _currentIndex = uriString.startsWith('/scaffold') ? 0 : 1;
+    _currentIndex = uriString.startsWith('/stack') ? 1 : 0;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.grey,
-        title: const Text("FAB samples"),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.grey,
+      //   title: const Text("FAB samples"),
+      // ),
       // use an IndexedStack to choose which child to show
       body: IndexedStack(
         index: _currentIndex,

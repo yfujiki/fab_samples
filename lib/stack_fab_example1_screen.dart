@@ -5,8 +5,14 @@ class StackFabExample1Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellow,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Stack Example 1"),
+        backgroundColor: Colors.lightGreen,
+      ),
+      body: Container(
+        color: Colors.yellow,
+      ),
     );
   }
 }

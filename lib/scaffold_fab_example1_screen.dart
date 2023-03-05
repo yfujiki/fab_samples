@@ -5,8 +5,14 @@ class ScaffoldFabExample1Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Scaffold Example 1"),
+        backgroundColor: Colors.pink,
+      ),
+      body: Container(
+        color: Colors.blue,
+      ),
     );
   }
 }

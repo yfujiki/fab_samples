@@ -5,8 +5,14 @@ class StackFabRootScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Scaffold Example 1"),
+        backgroundColor: Colors.lightGreen,
+      ),
+      body: Container(
+        color: Colors.green,
+      ),
     );
   }
 }
