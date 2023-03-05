@@ -18,7 +18,6 @@ class ScaffoldFabLocation extends BeamLocation<BeamState> {
         const BeamPage(
           title: "Scaffold Example 1",
           key: ValueKey("/scaffold/1"),
-          type: BeamPageType.noTransition,
           child: ScaffoldFabExample1Screen(),
         )
     ];

@@ -16,7 +16,6 @@ class StackFabLocation extends BeamLocation<BeamState> {
       if (state.uri.path.startsWith("/stack/1") == true)
         const BeamPage(
           key: ValueKey("/stack/1"),
-          type: BeamPageType.noTransition,
           child: StackFabExample1Screen(),
         )
     ];
