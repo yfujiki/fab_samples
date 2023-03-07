@@ -21,7 +21,6 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
     BeamerDelegate(
       initialPath: '/scaffold',
       locationBuilder: (routeInformation, _) {
-        print("Route in scaffold: ${routeInformation.location}");
         if (routeInformation.location!.startsWith('/scaffold')) {
           return ScaffoldFabLocation(routeInformation);
         }
@@ -31,7 +30,6 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
     BeamerDelegate(
       initialPath: '/stack',
       locationBuilder: (routeInformation, _) {
-        print("Route in stack: ${routeInformation.location}");
         if (routeInformation.location!.startsWith('/stack')) {
           return StackFabLocation(routeInformation);
         }
