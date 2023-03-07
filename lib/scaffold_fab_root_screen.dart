@@ -8,6 +8,10 @@ class ScaffoldFabRootScreen extends StatelessWidget {
     {
       "title": "Standard",
       "path": "/scaffold/1",
+    },
+    {
+      "title": "Extended",
+      "path": "/scaffold/2",
     }
   ];
 

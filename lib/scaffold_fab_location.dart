@@ -1,6 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'scaffold_fab_example1_screen.dart';
+import 'scaffold_fab_example2_screen.dart';
 import 'scaffold_fab_root_screen.dart';
 
 class ScaffoldFabLocation extends BeamLocation<BeamState> {
@@ -19,6 +20,12 @@ class ScaffoldFabLocation extends BeamLocation<BeamState> {
           title: "Scaffold Example 1",
           key: ValueKey("/scaffold/1"),
           child: ScaffoldFabExample1Screen(),
+        ),
+      if (state.uri.path.startsWith("/scaffold/2") == true)
+        const BeamPage(
+          title: "Scaffold Example 2",
+          key: ValueKey("/scaffold/2"),
+          child: ScaffoldFabExample2Screen(),
         )
     ];
   }
