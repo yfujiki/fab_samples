@@ -36,21 +36,24 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
       body: ListView.builder(
         itemBuilder: (context, index) {
           if (index == 0) {
-            return Padding(
-              padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
-              child: CustomSegmentedButton(
-                segments: ScaffoldFabExample1Screen.buttonTypes
-                    .map((e) => ButtonSegment(
-                          value: e,
-                          label: Text(e.title),
-                        ))
-                    .toList(),
-                selected: {_selectedButtonType},
-                onSelectionChanged: (p0) {
-                  setState(() {
-                    _selectedButtonType = p0.first;
-                  });
-                },
+            return SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
+                child: CustomSegmentedButton(
+                  segments: ScaffoldFabExample1Screen.buttonTypes
+                      .map((e) => ButtonSegment(
+                            value: e,
+                            label: Text(e.title),
+                          ))
+                      .toList(),
+                  selected: {_selectedButtonType},
+                  onSelectionChanged: (p0) {
+                    setState(() {
+                      _selectedButtonType = p0.first;
+                    });
+                  },
+                ),
               ),
             );
           }

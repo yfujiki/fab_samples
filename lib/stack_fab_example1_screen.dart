@@ -34,21 +34,24 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
-            child: CustomSegmentedButton(
-              segments: StackFabExample1Screen.buttonTypes
-                  .map((e) => ButtonSegment(
-                        value: e,
-                        label: Text(e.title),
-                      ))
-                  .toList(),
-              selected: {_selectedButtonType},
-              onSelectionChanged: (p0) {
-                setState(() {
-                  _selectedButtonType = p0.first;
-                });
-              },
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
+              child: CustomSegmentedButton(
+                segments: StackFabExample1Screen.buttonTypes
+                    .map((e) => ButtonSegment(
+                          value: e,
+                          label: Text(e.title),
+                        ))
+                    .toList(),
+                selected: {_selectedButtonType},
+                onSelectionChanged: (p0) {
+                  setState(() {
+                    _selectedButtonType = p0.first;
+                  });
+                },
+              ),
             ),
           ),
           SingleChildScrollView(
