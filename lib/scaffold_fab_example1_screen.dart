@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
-import 'package:fab_samples/fab_location.dart';
-import 'package:fab_samples/floating_action_button_mixin.dart';
+import 'button_location.dart';
+import 'floating_action_button_mixin.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,7 @@ class ScaffoldFabExample1Screen extends StatefulWidget {
   static final faker = Faker();
   static final fakeData = List<String>.generate(50, (_) => faker.person.name());
   static const List<ButtonType> buttonTypes = ButtonType.values;
-  static const List<FABLocation> buttonLocations = FABLocation.values;
+  static const List<ButtonLocation> buttonLocations = ButtonLocation.values;
 
   @override
   State<ScaffoldFabExample1Screen> createState() =>
@@ -24,7 +24,7 @@ class ScaffoldFabExample1Screen extends StatefulWidget {
 class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
     with FloatingActionButtonMixin {
   var _selectedButtonType = ButtonType.standard;
-  var _selectedFABLocation = FABLocation.endFloat;
+  var _selectedButtonLocation = ButtonLocation.endFloat;
 
   @override
   Widget build(BuildContext context) {
@@ -66,10 +66,10 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
                             label: Text(e.toString()),
                           ))
                       .toList(),
-                  selected: {_selectedFABLocation},
+                  selected: {_selectedButtonLocation},
                   onSelectionChanged: (p0) {
                     setState(() {
-                      _selectedFABLocation = p0.first;
+                      _selectedButtonLocation = p0.first;
                     });
                   },
                 ),
@@ -83,7 +83,7 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
         itemCount: ScaffoldFabExample1Screen.fakeData.length + 2,
       ),
       floatingActionButton: floatingActionButton(_selectedButtonType),
-      floatingActionButtonLocation: _selectedFABLocation.location,
+      floatingActionButtonLocation: _selectedButtonLocation.location,
     );
   }
 }

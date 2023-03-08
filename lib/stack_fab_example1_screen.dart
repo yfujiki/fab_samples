@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
-import 'package:fab_samples/button_location.dart';
-import 'package:fab_samples/floating_action_button_mixin.dart';
+import 'button_alignment.dart';
+import 'floating_action_button_mixin.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,7 @@ class StackFabExample1Screen extends StatefulWidget {
   static final faker = Faker();
   static final fakeData = List<String>.generate(50, (_) => faker.person.name());
   static const List<ButtonType> buttonTypes = ButtonType.values;
-  static const List<ButtonLocation> buttonLocations = ButtonLocation.values;
+  static const List<ButtonAlignment> buttonAlignments = ButtonAlignment.values;
 
   @override
   State<StackFabExample1Screen> createState() => _StackFabExample1ScreenState();
@@ -23,7 +23,7 @@ class StackFabExample1Screen extends StatefulWidget {
 class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
     with FloatingActionButtonMixin {
   var _selectedButtonType = ButtonType.standard;
-  var _selectedButtonLocation = ButtonLocation.rightBottom;
+  var _selectedButtonAlignment = ButtonAlignment.bottomRight;
 
   @override
   Widget build(BuildContext context) {
@@ -56,16 +56,16 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
               child: CustomSegmentedButton(
-                segments: StackFabExample1Screen.buttonLocations
+                segments: StackFabExample1Screen.buttonAlignments
                     .map((e) => ButtonSegment(
                           value: e,
-                          label: Text(e.title),
+                          label: Text(e.toString()),
                         ))
                     .toList(),
-                selected: {_selectedButtonLocation},
+                selected: {_selectedButtonAlignment},
                 onSelectionChanged: (p0) {
                   setState(() {
-                    _selectedButtonLocation = p0.first;
+                    _selectedButtonAlignment = p0.first;
                   });
                 },
               ),
@@ -80,7 +80,7 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
   Flexible _body() {
     return Flexible(
       child: Stack(
-        alignment: _selectedButtonLocation.alignment,
+        alignment: _selectedButtonAlignment.alignment,
         children: [
           ListView.builder(
             itemBuilder: (context, index) {
