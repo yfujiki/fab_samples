@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
 
-import 'button_alignment.dart';
 import 'floating_action_button_mixin.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
@@ -8,28 +7,28 @@ import 'package:flutter/material.dart';
 import 'button_type.dart';
 import 'custom_segmented_button.dart';
 
-class StackFabExample1Screen extends StatefulWidget {
-  const StackFabExample1Screen({super.key});
+class StackFabExample2Screen extends StatefulWidget {
+  const StackFabExample2Screen({super.key});
 
   static final faker = Faker();
   static final fakeData = List<String>.generate(50, (_) => faker.person.name());
   static const List<ButtonType> buttonTypes = ButtonType.values;
-  static const List<ButtonAlignment> buttonAlignments = ButtonAlignment.values;
 
   @override
-  State<StackFabExample1Screen> createState() => _StackFabExample1ScreenState();
+  State<StackFabExample2Screen> createState() => _StackFabExample2ScreenState();
 }
 
-class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
+class _StackFabExample2ScreenState extends State<StackFabExample2Screen>
     with FloatingActionButtonMixin {
   var _selectedButtonType = ButtonType.standard;
-  var _selectedButtonAlignment = ButtonAlignment.bottomRight;
+  double _top = 0;
+  double _left = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Stack with Alignment"),
+        title: const Text("Stack with Positioned"),
         backgroundColor: Colors.pink,
       ),
       body: Column(
@@ -39,7 +38,7 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
               child: CustomSegmentedButton(
-                segments: StackFabExample1Screen.buttonTypes
+                segments: StackFabExample2Screen.buttonTypes
                     .map((e) => ButtonSegment(
                           value: e,
                           label: Text(e.title),
@@ -54,26 +53,6 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
               ),
             ),
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
-              child: CustomSegmentedButton(
-                segments: StackFabExample1Screen.buttonAlignments
-                    .map((e) => ButtonSegment(
-                          value: e,
-                          label: Text(e.toString()),
-                        ))
-                    .toList(),
-                selected: {_selectedButtonAlignment},
-                onSelectionChanged: (p0) {
-                  setState(() {
-                    _selectedButtonAlignment = p0.first;
-                  });
-                },
-              ),
-            ),
-          ),
           _body(),
         ],
       ),
@@ -83,7 +62,6 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
   Flexible _body() {
     return Flexible(
       child: Stack(
-        alignment: _selectedButtonAlignment.alignment,
         children: [
           ListView.builder(
             itemBuilder: (context, index) {
@@ -92,14 +70,23 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
                   print("tapped");
                 },
                 child: ListTile(
-                  title: Text(StackFabExample1Screen.fakeData[index]),
+                  title: Text(StackFabExample2Screen.fakeData[index]),
                 ),
               );
             },
           ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: floatingActionButton(_selectedButtonType),
+          Positioned(
+            left: _left,
+            top: _top,
+            child: GestureDetector(
+              onPanUpdate: (details) {
+                setState(() {
+                  _left += details.delta.dx;
+                  _top += details.delta.dy;
+                });
+              },
+              child: floatingActionButton(_selectedButtonType),
+            ),
           ),
         ],
       ),

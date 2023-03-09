@@ -10,11 +10,11 @@ class RootScreen extends StatelessWidget {
       "path": "/scaffold1",
     },
     {
-      "title": "Using Stack and fixed Alignment",
+      "title": "Using Stack and Alignment",
       "path": "/stack1",
     },
     {
-      "title": "Using Stack and arbitrary Alignment",
+      "title": "Using Stack and Positioned",
       "path": "/stack2",
     },
   ];
@@ -23,7 +23,7 @@ class RootScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Samples"),
+        title: const Text("Floating Action Button Samples"),
         backgroundColor: Colors.pink,
       ),
       body: ListView.separated(

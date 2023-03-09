@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'root_screen.dart';
 import 'scaffold_fab_example1_screen.dart';
 import 'stack_fab_example1_screen.dart';
+import 'stack_fab_example2_screen.dart';
 
 class SampleBeamLocation extends BeamLocation<BeamState> {
   SampleBeamLocation(super.routeInformation);
@@ -31,7 +32,7 @@ class SampleBeamLocation extends BeamLocation<BeamState> {
         const BeamPage(
           title: "Stack Example 2",
           key: ValueKey("/stack2"),
-          child: StackFabExample1Screen(),
+          child: StackFabExample2Screen(),
         )
     ];
   }
