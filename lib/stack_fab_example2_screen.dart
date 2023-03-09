@@ -64,6 +64,7 @@ class _StackFabExample2ScreenState extends State<StackFabExample2Screen>
       child: Stack(
         children: [
           ListView.builder(
+            itemCount: StackFabExample2Screen.fakeData.length,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {

@@ -80,7 +80,7 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
             );
           }
           return ListTile(
-            title: Text(ScaffoldFabExample1Screen.fakeData[index]),
+            title: Text(ScaffoldFabExample1Screen.fakeData[index - 2]),
           );
         },
         itemCount: ScaffoldFabExample1Screen.fakeData.length + 2,

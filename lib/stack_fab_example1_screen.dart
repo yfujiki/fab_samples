@@ -86,6 +86,7 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
         alignment: _selectedButtonAlignment.alignment,
         children: [
           ListView.builder(
+            itemCount: StackFabExample1Screen.fakeData.length,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
