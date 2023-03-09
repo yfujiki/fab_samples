@@ -1,25 +1,29 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 
-class ScaffoldFabRootScreen extends StatelessWidget {
-  const ScaffoldFabRootScreen({super.key});
+class RootScreen extends StatelessWidget {
+  const RootScreen({super.key});
 
   static const List<Map<String, String>> data = [
     {
-      "title": "Standard",
-      "path": "/scaffold/1",
+      "title": "Using Scaffold",
+      "path": "/scaffold1",
     },
     {
-      "title": "Extended",
-      "path": "/scaffold/2",
-    }
+      "title": "Using Stack and fixed Alignment",
+      "path": "/stack1",
+    },
+    {
+      "title": "Using Stack and arbitrary Alignment",
+      "path": "/stack2",
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Scaffold"),
+        title: const Text("Samples"),
         backgroundColor: Colors.pink,
       ),
       body: ListView.separated(

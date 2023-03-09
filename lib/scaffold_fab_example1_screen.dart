@@ -30,7 +30,7 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Scaffold Example 1"),
+        title: const Text("Scaffold Example"),
         backgroundColor: Colors.pink,
       ),
       body: ListView.builder(
@@ -87,6 +87,22 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
       ),
       floatingActionButton: floatingActionButton(_selectedButtonType),
       floatingActionButtonLocation: _selectedButtonLocation.location,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.amber,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                "Bottom Bar",
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
