@@ -30,7 +30,7 @@ class _StackFabExample1ScreenState extends State<StackFabExample1Screen>
     return Scaffold(
       appBar: AppBar(
         title: const Text("Stack with Alignment"),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.black12,
       ),
       body: Column(
         children: [

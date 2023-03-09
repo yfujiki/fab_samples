@@ -9,14 +9,14 @@ mixin FloatingActionButtonMixin {
     switch (type) {
       case (ButtonType.small):
         return FloatingActionButton.small(
-          child: const Icon(Icons.question_mark),
+          child: const Icon(Icons.add),
           onPressed: () {
             print("Tapped small FAB");
           },
         );
       case (ButtonType.large):
         return FloatingActionButton.large(
-          child: const Icon(Icons.question_mark),
+          child: const Icon(Icons.add),
           onPressed: () {
             print("Tapped large FAB");
           },
@@ -31,7 +31,7 @@ mixin FloatingActionButtonMixin {
         );
       default:
         return FloatingActionButton(
-          child: const Icon(Icons.question_mark),
+          child: const Icon(Icons.add),
           onPressed: () {
             print("Tapped standard FAB");
           },

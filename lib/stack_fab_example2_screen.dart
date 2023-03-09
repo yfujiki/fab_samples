@@ -29,7 +29,7 @@ class _StackFabExample2ScreenState extends State<StackFabExample2Screen>
     return Scaffold(
       appBar: AppBar(
         title: const Text("Stack with Positioned"),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.black12,
       ),
       body: Column(
         children: [

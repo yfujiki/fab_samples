@@ -24,7 +24,7 @@ class RootScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Floating Action Button Samples"),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.black12,
       ),
       body: ListView.separated(
         itemCount: data.length,

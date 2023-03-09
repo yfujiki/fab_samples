@@ -31,7 +31,7 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
     return Scaffold(
       appBar: AppBar(
         title: const Text("Scaffold Example"),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.black12,
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
@@ -88,7 +88,7 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
       floatingActionButton: floatingActionButton(_selectedButtonType),
       floatingActionButtonLocation: _selectedButtonLocation.location,
       bottomNavigationBar: BottomAppBar(
-        color: Colors.amber,
+        color: Colors.black12,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -97,7 +97,11 @@ class _ScaffoldFabExample1ScreenState extends State<ScaffoldFabExample1Screen>
               padding: EdgeInsets.all(16.0),
               child: Text(
                 "Bottom Bar",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
               ),
             ),
           ],

@@ -28,24 +28,24 @@ class CustomSegmentedButton<T> extends StatelessWidget {
       style: style ??
           ButtonStyle(
             backgroundColor: MaterialStateColor.resolveWith((states) {
-              return Colors.lightGreen;
+              return Colors.black12;
             }),
             foregroundColor: MaterialStateColor.resolveWith((states) {
               if (states.isEmpty) {
-                return Colors.green.shade800;
+                return Colors.black54;
               }
               switch (states.first) {
                 case MaterialState.pressed:
-                  return Colors.white;
+                  return Colors.black87;
                 case MaterialState.selected:
-                  return Colors.white;
+                  return Colors.black87;
                 default:
-                  return Colors.green.shade800;
+                  return Colors.black54;
               }
             }),
             side: MaterialStateBorderSide.resolveWith(
                 (Set<MaterialState> states) {
-              return BorderSide(color: Colors.green.shade400);
+              return const BorderSide(color: Colors.black54);
             }),
           ),
       segments: segments,
